@@ -14,6 +14,76 @@ Professor: Msc. Hygo Sousa De Oliveira
 
 ## 📅 Dia 1 – História, Filosofia e Configuração do Ambiente
 
+### ⚙️ Exercício 00 – Configurando o Ambiente Virtual
+
+Antes de escrever qualquer linha de código, todo projeto Python profissional começa com um **ambiente virtual** — um espaço isolado que garante que as dependências do seu projeto não conflitem com outros projetos ou com o Python do sistema.
+
+Neste exercício você vai configurar o ambiente que será usado durante todo o curso.
+
+**Passo a passo:**
+
+**1. Verifique se o Python 3.12 está instalado:**
+```bash
+python3.12 --version
+```
+> Se não estiver instalado, baixe em [python.org/downloads](https://www.python.org/downloads/) e escolha a versão **3.12.x**.
+
+**2. Crie o ambiente virtual com Python 3.12:**
+```bash
+python3.12 -m venv .venv
+```
+> O argumento `-m venv` invoca o módulo nativo de criação de ambientes virtuais.  
+> `.venv` é o nome da pasta — o ponto na frente é uma convenção para indicar que é um diretório de configuração.
+
+**3. Ative o ambiente virtual:**
+
+| Sistema Operacional | Comando |
+|---------------------|---------|
+| Linux / macOS | `source .venv/bin/activate` |
+| Windows (PowerShell) | `.venv\Scripts\Activate.ps1` |
+| Windows (CMD) | `.venv\Scripts\activate.bat` |
+
+Quando ativado, o terminal exibirá o prefixo `(.venv)` antes do prompt:
+```bash
+(.venv) usuario@maquina:~/curso$
+```
+
+**4. Confirme que o ambiente está usando a versão correta:**
+```bash
+python --version
+# Esperado: Python 3.12.x
+
+which python        # Linux/macOS
+where python        # Windows
+# Deve apontar para dentro da pasta .venv
+```
+
+**5. Atualize o `pip` (gerenciador de pacotes):**
+```bash
+pip install --upgrade pip
+```
+
+**6. Crie o arquivo `.gitignore`** para não versionar a pasta do ambiente:
+```bash
+echo ".venv/" >> .gitignore
+echo "__pycache__/" >> .gitignore
+```
+
+**7. (Opcional) Congele as dependências para reprodutibilidade:**
+```bash
+pip freeze > requirements.txt
+```
+
+**✅ Critérios de conclusão:**
+- [ ] Ambiente virtual criado com Python 3.12
+- [ ] Ambiente ativado (prefixo `(.venv)` visível no terminal)
+- [ ] `python --version` retorna `Python 3.12.x`
+- [ ] `.gitignore` criado com `.venv/` listado
+
+> 💡 *Nunca suba a pasta `.venv` para o GitHub — ela é gerada localmente e pode ter centenas de MB. O arquivo `requirements.txt` é o que permite que outra pessoa recrie o ambiente com `pip install -r requirements.txt`.*
+
+---
+
 ### 🟢 Exercício 01 – O Clássico com Personalidade
 Todo programador começa com "Hello, World!". Mas aqui vamos além:  
 Escreva um script que exiba, em linhas separadas:
@@ -544,6 +614,7 @@ def exportar_relatorio() -> None: ...
 
 | # | Tópico Principal | Nível | Dia |
 |---|-----------------|-------|-----|
+| 00 | Ambiente virtual, Python 3.12, `.gitignore` | ⚙️ | 1 |
 | 01 | `print()` básico | 🟢 | 1 |
 | 02 | Módulo `sys`, ambiente | 🟢 | 1 |
 | 03 | Zen of Python, `import` | 🟢 | 1 |
