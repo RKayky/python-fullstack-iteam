@@ -3,8 +3,8 @@
 MÓDULO 2 – Estruturas de Controle
 Curso de Capacitação Full Stack – ITEAM
 
-Aluno(a): Ryan Kayky MArques Rolins Bastos
-Data    : 22/05/2026
+Aluno(a): <SEU NOME COMPLETO AQUI>
+Data    : <DATA DE ENTREGA>
 =============================================================
 
 INSTRUÇÕES:
