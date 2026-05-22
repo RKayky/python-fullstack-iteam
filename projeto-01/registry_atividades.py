@@ -22,57 +22,37 @@ NÍVEIS:
   🔴 Atividade 5 — Avançado      (Registry completo + plugins)
 =============================================================
 """
+print("=" * 60)
+print("ATIVIDADE 1 — Calculadora de Operações")
+print("=" * 60)
 
-
-# ==============================================================
-# 🟢 ATIVIDADE 1 — Calculadora de Operações
-# Nível: Básico | Conceito: dicionário simples como registry
-# ==============================================================
-
-def adicionar(x, y):
-    return x + y
-
-def menos(x, y):
-    return x - y
-
-def multiplica(x, y):
-    return x * y
-
-def divisao(x, y):
-    if y == 0:
-        raise ZeroDivisionError("Divisão por zero.")
-    return x / y
-
-def potencia(x, y):
-    return x ** y
-
-def modulo(x, y):
-    return x % y
-
-dicionario = { 
-    "soma": adicionar,
-    "subtracao": menos,
-    "multiplicacao": multiplica,
-    "divisao": divisao,
-    "potencia": potencia,
-    "modulo": modulo
-}
-
-def calcular(operador, sum1, sum2):
-    if operador in dicionario:
-        opercaomat = dicionario[operador]
-        resultado = opercaomat(sum1, sum2)
-        return resultado
+# ── ANTES (if/elif) ──────────────────────────────────────────
+def calcular_antes(operacao: str, a: float, b: float) -> float:
+    """Calculadora com if/elif — para ser refatorada."""
+    if operacao == "soma":
+        return a + b
+    elif operacao == "subtracao":
+        return a - b
+    elif operacao == "multiplicacao":
+        return a * b
+    elif operacao == "divisao":
+        if b == 0:
+            raise ZeroDivisionError("Divisão por zero.")
+        return a / b
+    elif operacao == "potencia":
+        return a ** b
+    elif operacao == "modulo":
+        return a % b
     else:
-        raise ValueError(f"Operação desconhecida: {operador}")
+        raise ValueError(f"Operação desconhecida: {operacao}")
 
 print("\n[ANTES]")
-print(calcular("soma",          10, 3))    # → 13
-print(calcular("subtracao",     10, 3))    # → 7
-print(calcular("multiplicacao", 10, 3))    # → 30
-print(calcular("divisao",       10, 4))    # → 2.5
-print(calcular("potencia",      2,  8))    # → 256.0
-print(calcular("modulo",        10, 3))    # → 1
+print(calcular_antes("soma",          10, 3))    # → 13
+print(calcular_antes("subtracao",     10, 3))    # → 7
+print(calcular_antes("multiplicacao", 10, 3))    # → 30
+print(calcular_antes("divisao",       10, 4))    # → 2.5
+print(calcular_antes("potencia",      2,  8))    # → 256.0
+print(calcular_antes("modulo",        10, 3))    # → 1
 
 
 # ── DEPOIS (Registry) ────────────────────────────────────────
