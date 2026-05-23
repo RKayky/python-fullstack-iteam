@@ -18,11 +18,18 @@ def carregar() -> list[dict]:
     """
     try:
         with open(ARQUIVO, "r") as f:
-            return json.load(f)
+            conteudo = f.read().strip()
+
+            if conteudo == "":
+                return []
+
+            return json.loads(conteudo)
+
     except FileNotFoundError:
         return []
-    except json.JSONDecodeError as exc:
-        raise ValueError(f"Arquivo JSON inválido: {ARQUIVO}") from exc
+
+    except json.JSONDecodeError:
+        return []
 
 
 def salvar(alunos: list[dict]) -> None:
@@ -105,10 +112,16 @@ def calcular_media_turma() -> float:
     qtd_notas = 0
 
     for aluno in alunos:
+        if not aluno["notas"]:
+            continue
+
         total_notas += sum(aluno["notas"])
         qtd_notas += len(aluno["notas"])
 
-    return total_notas / qtd_notas
+    if qtd_notas == 0:
+        return 0.0
+
+    return total_notas / qtd_notas    
 
 
 def exportar_relatorio() -> None:
@@ -125,9 +138,20 @@ def exportar_relatorio() -> None:
     aluno_menor = alunos[0]
 
     for aluno in alunos:
+        if not aluno["notas"]:
+            continue
+
         media_atual = sum(aluno["notas"]) / len(aluno["notas"])
-        media_maior = sum(aluno_maior["notas"]) / len(aluno_maior["notas"])
-        media_menor = sum(aluno_menor["notas"]) / len(aluno_menor["notas"])
+        media_maior = (
+            sum(aluno_maior["notas"]) / len(aluno_maior["notas"])
+            if aluno_maior["notas"]
+            else 0.0
+        )
+        media_menor = (
+            sum(aluno_menor["notas"]) / len(aluno_menor["notas"])
+            if aluno_menor["notas"]
+            else 0.0
+        )
 
         if media_atual > media_maior:
             aluno_maior = aluno

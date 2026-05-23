@@ -289,6 +289,8 @@ def ex11_numero_primo():
     Otimização: verifica divisores somente até √n.
     """
     # SUA SOLUÇÃO AQUI
+    import math
+
     try:
         entrada = input("Digite um número inteiro positivo: ")
         n = int(entrada)
@@ -300,10 +302,15 @@ def ex11_numero_primo():
         if n == 1:
             print("O número 1 não é primo.")
             return
+
+        if n == 2:
+            print("O número 2 é PRIMO!")
+            return
             
         eh_primo = True
-        
-        for i in range(2, n):
+
+        limite = int(math.sqrt(n)) + 1
+        for i in range(2, limite):
             if n % i == 0:
                 eh_primo = False
                 print(f"Encontrou o divisor {i}. Interrompendo a busca com 'break'...")
