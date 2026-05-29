@@ -16,14 +16,10 @@
 # ----------------------------------------------------------------------------
 
 from salao.equipes.equipe import Equipe
-
-
-# BUG 9 ↓  não herda de Equipe
-class EquipeCabelo:       # ← ERRADO: deveria ser  class EquipeCabelo(Equipe):
+class EquipeCabelo(Equipe): 
     """
     Equipe responsável pelos serviços de cabelo e barba.
     """
-
     # BUG 9 ↓  __init__ não chama super().__init__
     def __init__(self):
         # ERRADO: deveria ter  super().__init__("Cabelo & Barba")

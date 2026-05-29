@@ -46,7 +46,7 @@ class Equipamento:
     def __str__(self):
         return (
             f"[{self.__codigo}] {self.nome} "
-            f"| {self.descricao} "        # ← ERRADO: deveria ser self.__descricao
+            f"| {self.__descricao} "        # ← ERRADO: deveria ser self.__descricao
             f"| R$ {self.valor:.2f}"
         )
 

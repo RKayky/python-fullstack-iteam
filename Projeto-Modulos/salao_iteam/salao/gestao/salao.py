@@ -57,8 +57,8 @@ class Salao:
         print(f"  EQUIPES DO SALÃO — {self.nome}")
         print(f"{'='*48}")
         for equipe in self.__equipes:
-            print(f"  {equipe}")
-            print(f"    Serviços: {equipe.descricao_servicos()}")
+            print(f" {equipe}")
+            print(f" Serviços: {equipe.descricao_servicos()}")
 
     # --- Gestão de equipamentos ---
 
