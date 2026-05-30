@@ -1,0 +1,44 @@
+[
+    {
+        "aluno": "Ryan K",
+        "nota1": 2.0,
+        "nota2": 3.0,
+        "nota3": 4.0,
+        "media": 3.0
+    },
+    {
+        "aluno": "Rubinho do Pneu",
+        "nota1": 3.0,
+        "nota2": 4.0,
+        "nota3": 5.0,
+        "media": 4.0
+    },
+    {
+        "aluno": "Cachorro Belga",
+        "nota1": 3.0,
+        "nota2": 3.0,
+        "nota3": 3.0,
+        "media": 3.0
+    },
+    {
+        "aluno": "Ryan K",
+        "nota1": 1.0,
+        "nota2": 2.0,
+        "nota3": 3.0,
+        "media": 2.0
+    },
+    {
+        "aluno": "Rubunho do pneu",
+        "nota1": 2.0,
+        "nota2": 3.0,
+        "nota3": 4.0,
+        "media": 3.0
+    },
+    {
+        "aluno": "Clar M",
+        "nota1": 2.0,
+        "nota2": 3.0,
+        "nota3": 4.0,
+        "media": 3.0
+    }
+]
