@@ -1,0 +1,23 @@
+[
+    {
+        "aluno": "Ryan Kayky",
+        "nota1": 4.0,
+        "nota2": 5.0,
+        "nota3": 6.0,
+        "media": 5.0
+    },
+    {
+        "aluno": "Leonam Souza",
+        "nota1": 2.0,
+        "nota2": 3.0,
+        "nota3": 4.0,
+        "media": 3.0
+    },
+    {
+        "aluno": "Gabriel Souza",
+        "nota1": 2.0,
+        "nota2": 3.0,
+        "nota3": 3.0,
+        "media": 2.67
+    }
+]
